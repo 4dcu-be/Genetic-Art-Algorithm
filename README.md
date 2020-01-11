@@ -41,6 +41,6 @@ routine.
 
 ```python
     target_image_path = "./img/starry_night_half.jpg"
-    checkpoint_path = "./starry_night2/"
+    checkpoint_path = "./starry_night/"
 ```
 
