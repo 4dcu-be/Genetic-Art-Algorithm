@@ -58,7 +58,7 @@ def print_summary(pop, img_template="output%d.png", checkpoint_path="output") ->
 
 if __name__ == "__main__":
     target_image_path = "./img/starry_night_half.jpg"
-    checkpoint_path = "./starry_night2/"
+    checkpoint_path = "./starry_night/"
     image_template = os.path.join(checkpoint_path, "drawing_%05d.png")
     target_image = Image.open(target_image_path).convert('RGBA')
 

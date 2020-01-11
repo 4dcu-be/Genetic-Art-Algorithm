@@ -80,8 +80,8 @@ class Painting:
         bb = b.get_background_color
         new_background = (int((ab[i] + bb[i])/2) for i in range(3))
 
-        child_a = Painting(0, a.get_img_width, a.get_img_height, a.target_image, background_color=new_background)
-        child_b = Painting(0, a.get_img_width, a.get_img_height, a.target_image, background_color=new_background)
+        child_a = Painting(0, a.target_image, background_color=new_background)
+        child_b = Painting(0, a.target_image, background_color=new_background)
 
         for at, bt in zip(a.triangles, b.triangles):
             if randint(0, 1) == 0:
