@@ -73,45 +73,45 @@ if __name__ == "__main__":
                  .breed(parent_picker=pick_random, combiner=mate, population_size=population_size)
                  .mutate(mutate_function=mutate_painting, rate=0.20, swap=0.75)
                  .evaluate(lazy=False)
-                 .apply(print_summary,
-                        img_template=image_template,
-                        checkpoint_path=checkpoint_path))
+                 .callback(print_summary,
+                           img_template=image_template,
+                           checkpoint_path=checkpoint_path))
 
     mid_evo = (Evolution()
                .survive(fraction=0.15)
                .breed(parent_picker=pick_best_and_random, combiner=mate, population_size=population_size)
                .mutate(mutate_function=mutate_painting, rate=0.15, swap=0.5)
                .evaluate(lazy=False)
-               .apply(print_summary,
-                      img_template=image_template,
-                      checkpoint_path=checkpoint_path))
+               .callback(print_summary,
+                         img_template=image_template,
+                         checkpoint_path=checkpoint_path))
 
     late_evo = (Evolution()
                 .survive(fraction=0.05)
                 .breed(parent_picker=pick_best_and_random, combiner=mate, population_size=population_size)
                 .mutate(mutate_function=mutate_painting, rate=0.05, swap=0.25)
                 .evaluate(lazy=False)
-                .apply(print_summary,
-                       img_template=image_template,
-                       checkpoint_path=checkpoint_path))
+                .callback(print_summary,
+                          img_template=image_template,
+                          checkpoint_path=checkpoint_path))
 
     final_evo = (Evolution()
                  .survive(fraction=0.025)
                  .breed(parent_picker=pick_best_and_random, combiner=mate, population_size=population_size)
                  .mutate(mutate_function=mutate_painting, rate=0.05, swap=0, sigma=0.15)
                  .evaluate(lazy=False)
-                 .apply(print_summary,
-                        img_template=image_template,
-                        checkpoint_path=checkpoint_path))
+                 .callback(print_summary,
+                           img_template=image_template,
+                           checkpoint_path=checkpoint_path))
 
     evo_step_5 = (Evolution()
                   .survive(fraction=0.025)
                   .breed(parent_picker=pick_best_and_random, combiner=mate, population_size=population_size)
                   .mutate(mutate_function=mutate_painting, rate=0.03, swap=0, sigma=0.12)
                   .evaluate(lazy=False)
-                  .apply(print_summary,
-                         img_template=image_template,
-                         checkpoint_path=checkpoint_path))
+                  .callback(print_summary,
+                            img_template=image_template,
+                            checkpoint_path=checkpoint_path))
 
     pop = pop.evolve(early_evo, n=200)
     pop = pop.evolve(mid_evo, n=300)

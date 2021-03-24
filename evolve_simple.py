@@ -105,9 +105,9 @@ if __name__ == "__main__":
                  .breed(parent_picker=pick_best_and_random, combiner=mate, population_size=population_size)
                  .mutate(mutate_function=mutate_painting, rate=0.05, swap=0.25)
                  .evaluate(lazy=False)
-                 .apply(print_summary,
-                        img_template=image_template,
-                        checkpoint_path=checkpoint_path))
+                 .callback(print_summary,
+                           img_template=image_template,
+                           checkpoint_path=checkpoint_path))
 
     pop = pop.evolve(evolution, n=5000)
 
