@@ -2,5 +2,5 @@ dill==0.3.3
 evol==0.5.2
 imgcompare==0.1.0
 multiprocess==0.70.11.1
-Pillow==8.3.2
+Pillow==9.0.0
 py-spy==0.1.8
